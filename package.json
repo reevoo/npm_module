@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Boilerplate project for creating npm modules",
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "serve": "http-server dist -p 8888",
     "build:prod": "BUILD_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npm run build:prod"    
+    "prepublish": "npm run build:prod"
   },
   "repository": {
     "type": "git",
@@ -28,12 +31,15 @@
     "babel-core": "^6.6.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.11.1",
     "babel-preset-stage-1": "^6.5.0",
     "eslint": "^2.2.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-loader": "^1.3.0",
     "eslint-plugin-promise": "^1.1.0",
     "eslint-plugin-standard": "^1.3.2",
+    "html-webpack-plugin": "^2.22.0",
+    "http-server": "^0.9.0",
     "webpack": "^1.12.14"
   }
 }

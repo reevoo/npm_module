@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 
+const HtmlwebpackPlugin = require('html-webpack-plugin')
+
 const ROOT_PATH = path.resolve(__dirname)
 const SRC_PATH = path.join(ROOT_PATH, 'src')
 
@@ -27,6 +29,11 @@ module.exports = {
   plugins: [
     // Avoid publishing files when compilation fails
     new webpack.NoErrorsPlugin(),
+    new HtmlwebpackPlugin({
+      filename: 'index.html',
+      title: 'List of examples',
+      template: path.resolve(ROOT_PATH, 'src/templates/index.html'),
+    }),
   ],
 
   stats: {
